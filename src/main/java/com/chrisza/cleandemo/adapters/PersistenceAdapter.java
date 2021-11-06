@@ -3,7 +3,6 @@ package com.chrisza.cleandemo.adapters;
 import com.chrisza.cleandemo.entities.Course;
 import com.chrisza.cleandemo.persistence.repositories.CourseRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

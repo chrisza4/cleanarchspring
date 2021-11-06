@@ -1,8 +1,8 @@
 package com.chrisza.cleandemo;
 
-import com.chrisza.cleandemo.adapters.PersistenceAdapter;
+import javax.xml.bind.ValidationException;
+
 import com.chrisza.cleandemo.entities.*;
-import com.chrisza.cleandemo.persistence.repositories.*;
 import com.chrisza.cleandemo.usecases.CourseUseCases;
 
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class CourseController {
     }
 
     @PostMapping("/course")
-    public Course addCourse(@RequestBody Course data) {
+    public Course addCourse(@RequestBody Course data) throws ValidationException {
         return this.courseUseCases.AddCourse(data);
     }
 
