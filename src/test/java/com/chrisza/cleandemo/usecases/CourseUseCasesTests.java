@@ -27,6 +27,11 @@ public class CourseUseCasesTests {
     }
 
     @Test
+    public void Sanity2() {
+        assertSame(1+3, 4);
+    }
+
+    @Test
     public void ShouldCreateNewCourse() {
         var useCase = new CourseUseCases(mockPersistenceAdapter);
         var course = new Course();

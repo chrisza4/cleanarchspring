@@ -18,7 +18,7 @@ public class CourseTests {
     }
 
     @Test
-    public void IsValidShouldBeValidForEmptyCourseName() {
+    public void IsValidShouldBeInvalidForEmptyCourseName() {
         var course = new Course();
         course.name = "";
         course.description = "Super Course";
@@ -28,4 +28,17 @@ public class CourseTests {
         assertSame(validationResult.GetErrors().size(), 1);
         assertSame(validationResult.GetErrors().get(0), "Course name cannot be empty");
     }
+
+    @Test
+    public void IsValidShouldBeInvalidForBlankCourseName() {
+        var course = new Course();
+        course.name = "  ";
+        course.description = "Super Course";
+
+        var validationResult = course.Validate();
+        assertFalse(validationResult.IsValid());
+        assertSame(validationResult.GetErrors().size(), 1);
+        assertSame(validationResult.GetErrors().get(0), "Course name cannot be empty");
+    }
+
 }

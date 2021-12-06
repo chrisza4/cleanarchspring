@@ -20,5 +20,4 @@ public class CourseController {
     public Course addCourse(@RequestBody Course data) throws ValidationException {
         return this.courseUseCases.AddCourse(data);
     }
-
 }
